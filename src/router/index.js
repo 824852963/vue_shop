@@ -9,8 +9,8 @@ const router = new Router({
   routes: [
     { path: '/', redirect: '/login' },
     { path: '/login', component: Login },
-    { path: '/home', component: Home },
-  ],
+    { path: '/home', component: Home }
+  ]
 })
 
 // 挂载路由导航守卫
