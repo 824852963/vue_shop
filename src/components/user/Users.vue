@@ -260,7 +260,6 @@ export default {
       const { data: res } = await this.$http.get('users/' + id)
       if (res.meta.status !== 200) return this.$message.error('查询用户信息失败！')
       this.editForm = res.data
-      console.log(this.editForm)
     },
     // 监听修改用户对话框关闭事件 进行表单重置
     editDialogClosed () {
@@ -270,7 +269,6 @@ export default {
     editUserInfo () {
       // 验证用户表单
       this.$refs.editFormRef.validate(async valid => {
-        console.log(valid)
         if (!valid) return
         // 发起修改用户信息的请求
         const { data: res } = await this.$http.put('users/' + this.editForm.id, {
@@ -299,7 +297,7 @@ export default {
       }
       const { data: res } = await this.$http.delete('users/' + id)
       if (res.meta.status !== 200) return this.$message.error('删除用户失败！')
-      this.$message.success('删除用户成功')
+      this.$message.success('删除用户成功！')
       this.getUserList()
     },
     // 展示分配角色的对话框
